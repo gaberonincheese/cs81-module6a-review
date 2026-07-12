@@ -53,10 +53,26 @@ Playlist.prototype.listSongs = function() {
   console.log("Songs:", this.songs.join(", "));
 };
 
+// --- ADDED NEW METHODS ---
+Playlist.prototype.getCurrentSong = function() {
+    return this.currentSong;
+}
+
+Playlist.prototype.setCurrentSong = function(songTitle) {
+    if (this.songs.includes(songTitle)) {
+        this.currentSong = songTitle;
+        this.songs.unshift(this.currentSong);
+        console.log("You chose a new song! Current song set to: ", this.currentSong);
+    } else {
+        console.log("You tried to set the song to ", songTitle, "! That song isn't in the playlist!");
+    }
+}
+
 let myMix = new Playlist("My Chill Mix");
 myMix.addSong("Lofi Study");
 myMix.addSong("Chillhop Beats");
 myMix.addSong("Evening Jazz");
 myMix.playFirst();
 myMix.skipSong();
+myMix.setCurrentSong("Chillhop Beats");
 myMix.listSongs();
