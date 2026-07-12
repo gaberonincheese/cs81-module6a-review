@@ -76,3 +76,9 @@ myMix.playFirst();
 myMix.skipSong();
 myMix.setCurrentSong("Chillhop Beats");
 myMix.listSongs();
+
+// --- SUGGESTION FOR IMPROVEMENT ---
+// In the skip song function, instead of removing the song from the array,
+// the song should be shifted to the back of the array. Otherwise,
+// the song is effectively removed from the playlist and needs 
+// to be manually re-added.
